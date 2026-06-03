@@ -112,6 +112,16 @@
       padding: 3px 8px; border-radius: 3px; text-transform: uppercase; white-space: nowrap;
     }
     .menu-item.active-item .ar-btn-small { display: block; }
+    .order-btn {
+      display: none; background: #fff; color: #000;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      padding: 3px 8px; border-radius: 3px; text-transform: uppercase;
+      white-space: nowrap; border: none; cursor: pointer; text-decoration: none;
+    }
+    .menu-item.active-item .order-btn { display: block; }
+    .drink-item.active-item .order-btn { display: block; }
+    .btn-group { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
 
     .item-icon { width: 26px; height: 26px; border: 1.5px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; transition: border-color 0.18s; }
     .menu-item.active-item .item-icon { border-color: #fff; }
@@ -220,6 +230,16 @@
   <div class="ar-tip">
     👆 <strong>Tap any item below</strong> to load it in the AR viewer above, then hit the AR button to place it on your table!
   </div>
+  <!-- ORDER BUTTON -->
+  <div style="margin: 0 18px 14px; display: flex; gap: 10px;">
+    <a id="orderNowBtn" href="https://brimburgers.blinkco.io/" target="_blank"
+       style="flex:1; display:block; background:#fff; color:#000; text-align:center;
+              font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:700;
+              letter-spacing:1.5px; text-transform:uppercase; padding:12px; border-radius:4px;
+              text-decoration:none; border: 2px solid #fff;">
+      &#x2B; Order Now — brimburgers.blinkco.io
+    </a>
+  </div>
 
   <!-- QR CODE SECTION -->
   <div class="qr-section">
@@ -255,27 +275,27 @@
       <div class="patty-label">Triple</div>
     </div>
     <div class="menu-list">
-      <div class="menu-item beef-item active-item" onclick="selectProduct(this,'Brim Classic','signature-smash.glb','PKR 890','nashvile-heat.usdz')">
+      <div class="menu-item beef-item active-item" onclick="selectProduct(this,'Brim Classic','signature-smash.glb','PKR 890','nashvile-heat.usdz','https://brimburgers.blinkco.io/product/brim-burger-1461459')">
         <div class="item-icon">🏆</div>
         <div class="item-name">Brim <em>Classic</em></div>
         <div class="item-price">890</div><div class="item-price">1090</div><div class="item-price">1290</div>
       </div>
-      <div class="menu-item beef-item" onclick="selectProduct(this,'Double Stack','signature-smash.glb','PKR 990','nashvile-heat.usdz')">
+      <div class="menu-item beef-item" onclick="selectProduct(this,'Double Stack','signature-smash.glb','PKR 990','nashvile-heat.usdz','https://brimburgers.blinkco.io/product/smashing-1461501')">
         <div class="item-icon">🔥</div>
         <div class="item-name">Double <em>Stack</em></div>
         <div class="item-price">990</div><div class="item-price">1190</div><div class="item-price">1390</div>
       </div>
-      <div class="menu-item beef-item" onclick="selectProduct(this,'Mushroom Swiss','signature-smash.glb','PKR 990','nashvile-heat.usdz')">
+      <div class="menu-item beef-item" onclick="selectProduct(this,'Mushroom Swiss','signature-smash.glb','PKR 990','nashvile-heat.usdz','https://brimburgers.blinkco.io/product/smashing-1461501')">
         <div class="item-icon">🍄</div>
         <div class="item-name">Mushroom <em>Swiss</em></div>
         <div class="item-price">990</div><div class="item-price">1190</div><div class="item-price">1390</div>
       </div>
-      <div class="menu-item beef-item" onclick="selectProduct(this,'Brim Special','signature-smash.glb','PKR 1090','nashvile-heat.usdz')">
+      <div class="menu-item beef-item" onclick="selectProduct(this,'Brim Special','signature-smash.glb','PKR 1090','nashvile-heat.usdz','https://brimburgers.blinkco.io/product/oklahoma-onion-smash-1905366')">
         <div class="item-icon">👑</div>
         <div class="item-name">Brim <em>Special</em></div>
         <div class="item-price">1090</div><div class="item-price">1290</div><div class="item-price">1490</div>
       </div>
-      <div class="menu-item beef-item" onclick="selectProduct(this,'BBQ Smash','signature-smash.glb','PKR 990','nashvile-heat.usdz')">
+      <div class="menu-item beef-item" onclick="selectProduct(this,'BBQ Smash','signature-smash.glb','PKR 990','nashvile-heat.usdz','https://brimburgers.blinkco.io/product/smashing-1461501')">
         <div class="item-icon">🥩</div>
         <div class="item-name">BBQ <em>Smash</em></div>
         <div class="item-price">990</div><div class="item-price">1190</div><div class="item-price">1390</div>
@@ -298,22 +318,22 @@
     </div>
     <div class="section-divider"></div>
     <div class="menu-list">
-      <div class="menu-item single-price" onclick="selectProduct(this,'Classic Hot Dog','bruzzo-special.glb','PKR 690')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Classic Hot Dog','bruzzo-special.glb','PKR 690','','https://brimburgers.blinkco.io/product/classic-hot-dog-1461461')">
         <div class="item-icon">🌭</div>
         <div class="item-name">Classic <em>Hot Dog</em></div>
         <div class="item-price">690</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Chilli Cheese Dog','bruzzo-special.glb','PKR 790')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Chilli Cheese Dog','bruzzo-special.glb','PKR 790','','https://brimburgers.blinkco.io/product/smokin-dog-1461462')">
         <div class="item-icon">🧀</div>
         <div class="item-name">Chilli <em>Cheese Dog</em></div>
         <div class="item-price">790</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Crispy Onion Dog','bruzzo-special.glb','PKR 750')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Crispy Onion Dog','bruzzo-special.glb','PKR 750','','https://brimburgers.blinkco.io/product/smokin-dog-1461462')">
         <div class="item-icon">🧅</div>
         <div class="item-name">Crispy <em>Onion Dog</em></div>
         <div class="item-price">750</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Brim Dog Special','bruzzo-special.glb','PKR 890')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Brim Dog Special','bruzzo-special.glb','PKR 890','','https://brimburgers.blinkco.io/product/loaded-hot-dog-1461463')">
         <div class="item-icon">👑</div>
         <div class="item-name">Brim Dog <em>Special</em></div>
         <div class="item-price">890</div>
@@ -336,22 +356,22 @@
     </div>
     <div class="section-divider"></div>
     <div class="menu-list">
-      <div class="menu-item single-price" onclick="selectProduct(this,'Classic Loaded Fries','bruzzo-special.glb','PKR 590')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Classic Loaded Fries','bruzzo-special.glb','PKR 590','','https://brimburgers.blinkco.io/product/commando-fries-1461495')">
         <div class="item-icon">🍟</div>
         <div class="item-name">Classic <em>Loaded Fries</em></div>
         <div class="item-price">590</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Cheese Fries','bruzzo-special.glb','PKR 650')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Cheese Fries','bruzzo-special.glb','PKR 650','','https://brimburgers.blinkco.io/product/commando-fries-1461495')">
         <div class="item-icon">🧀</div>
         <div class="item-name">Cheese <em>Fries</em></div>
         <div class="item-price">650</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'BBQ Pulled Fries','bruzzo-special.glb','PKR 750')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'BBQ Pulled Fries','bruzzo-special.glb','PKR 750','','https://brimburgers.blinkco.io/product/commando-fries-1461495')">
         <div class="item-icon">🥩</div>
         <div class="item-name">BBQ Pulled <em>Fries</em></div>
         <div class="item-price">750</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Brim Loaded Special','bruzzo-special.glb','PKR 850')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Brim Loaded Special','bruzzo-special.glb','PKR 850','','https://brimburgers.blinkco.io/product/commando-fries-1461495')">
         <div class="item-icon">🔥</div>
         <div class="item-name">Brim Loaded <em>Special</em></div>
         <div class="item-price">850</div>
@@ -374,17 +394,17 @@
     </div>
     <div class="section-divider"></div>
     <div class="menu-list">
-      <div class="menu-item single-price" onclick="selectProduct(this,'Crispy Chicken Brimwich','signature-smash.glb','PKR 790')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Crispy Chicken Brimwich','signature-smash.glb','PKR 790','','https://brimburgers.blinkco.io/')">
         <div class="item-icon">🍗</div>
         <div class="item-name">Crispy Chicken <em>Brimwich</em></div>
         <div class="item-price">790</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Beef Brimwich','signature-smash.glb','PKR 890')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Beef Brimwich','signature-smash.glb','PKR 890','','https://brimburgers.blinkco.io/')">
         <div class="item-icon">🥩</div>
         <div class="item-name">Beef <em>Brimwich</em></div>
         <div class="item-price">890</div>
       </div>
-      <div class="menu-item single-price" onclick="selectProduct(this,'Spicy Brimwich','signature-smash.glb','PKR 850')">
+      <div class="menu-item single-price" onclick="selectProduct(this,'Spicy Brimwich','signature-smash.glb','PKR 850','','https://brimburgers.blinkco.io/')">
         <div class="item-icon">🌶️</div>
         <div class="item-name">Spicy <em>Brimwich</em></div>
         <div class="item-price">850</div>
@@ -410,35 +430,35 @@
       <div class="drinks-grid">
         <div>
           <div class="drink-col-title">Shakes</div>
-          <div class="drink-item" onclick="selectProduct(this,'Vanilla Shake','peach-ice-tea.glb','PKR 550')">
+          <div class="drink-item" onclick="selectProduct(this,'Vanilla Shake','peach-ice-tea.glb','PKR 550','','https://brimburgers.blinkco.io/product/vanilla-1461481')">
             <div class="drink-name">🍦 Vanilla</div><div class="drink-price-main">550</div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Chocolate Shake','peach-ice-tea.glb','PKR 580')">
+          <div class="drink-item" onclick="selectProduct(this,'Chocolate Shake','peach-ice-tea.glb','PKR 580','','https://brimburgers.blinkco.io/product/chocolate-shake-1461480')">
             <div class="drink-name">🍫 Chocolate</div><div class="drink-price-main">580</div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Strawberry Shake','peach-ice-tea.glb','PKR 580')">
+          <div class="drink-item" onclick="selectProduct(this,'Strawberry Shake','peach-ice-tea.glb','PKR 580','','https://brimburgers.blinkco.io/product/strawberry-1461493')">
             <div class="drink-name">🍓 Strawberry</div><div class="drink-price-main">580</div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Lotus Shake','peach-ice-tea.glb','PKR 620')">
+          <div class="drink-item" onclick="selectProduct(this,'Lotus Shake','peach-ice-tea.glb','PKR 620','','https://brimburgers.blinkco.io/product/lotus-biscoff-shake-1461484')">
             <div class="drink-name">🔥 Lotus</div><div class="drink-price-main">620</div>
           </div>
         </div>
         <div>
           <div class="drink-col-title">Drinks</div>
           <div class="drink-size-labels"><span class="size-label">Reg</span><span class="size-label">Lrg</span></div>
-          <div class="drink-item" onclick="selectProduct(this,'Lemonade','peach-ice-tea.glb','PKR 220 / 300')">
+          <div class="drink-item" onclick="selectProduct(this,'Lemonade','peach-ice-tea.glb','PKR 220 / 300','','https://brimburgers.blinkco.io/')">
             <div class="drink-name">🍋 Lemonade</div>
             <div class="drink-prices"><div class="drink-price-main">220</div><div class="drink-price-large">300</div></div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Peach Iced Tea','peach-ice-tea.glb','PKR 250 / 330')">
+          <div class="drink-item" onclick="selectProduct(this,'Peach Iced Tea','peach-ice-tea.glb','PKR 250 / 330','','https://brimburgers.blinkco.io/')">
             <div class="drink-name">🍑 Peach Tea</div>
             <div class="drink-prices"><div class="drink-price-main">250</div><div class="drink-price-large">330</div></div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Fruit Punch','peach-ice-tea.glb','PKR 280 / 360')">
+          <div class="drink-item" onclick="selectProduct(this,'Fruit Punch','peach-ice-tea.glb','PKR 280 / 360','','https://brimburgers.blinkco.io/')">
             <div class="drink-name">🍊 Fruit Punch</div>
             <div class="drink-prices"><div class="drink-price-main">280</div><div class="drink-price-large">360</div></div>
           </div>
-          <div class="drink-item" onclick="selectProduct(this,'Soft Drink','peach-ice-tea.glb','PKR 120 / 170')">
+          <div class="drink-item" onclick="selectProduct(this,'Soft Drink','peach-ice-tea.glb','PKR 120 / 170','','https://brimburgers.blinkco.io/product/pepsi-345ml-2028518')">
             <div class="drink-name">🥤 Soft Drink</div>
             <div class="drink-prices"><div class="drink-price-main">120</div><div class="drink-price-large">170</div></div>
           </div>
@@ -478,7 +498,7 @@
       if (chefTimer) clearTimeout(chefTimer);
       chefTimer = setTimeout(() => { hideChef(); }, 4500);
     }
-    function selectProduct(el, name, glbFile, price, usdz) {
+    function selectProduct(el, name, glbFile, price, usdz, orderUrl) {
       if (activeEl) activeEl.classList.remove('active-item');
       el.classList.add('active-item');
       activeEl = el;
@@ -498,6 +518,8 @@
       }, { once: true });
       document.getElementById('nowViewingName').textContent = name;
       document.getElementById('nowViewingPrice').textContent = price;
+      const orderBtn = document.getElementById('orderNowBtn');
+      if (orderBtn && orderUrl) { orderBtn.href = orderUrl; }
       viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     const arViewer = document.getElementById('arViewer');
